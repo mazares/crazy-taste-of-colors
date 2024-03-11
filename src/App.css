@@ -1,0 +1,113 @@
+.app {
+  display: grid;
+  min-height: 100vh;
+  background: #333;
+  color: #ddd;
+  place-items: center;
+}
+
+.header,
+.main,
+.footer {
+  border: 1px solid red;
+  width: 90vw;
+}
+
+.header {
+  height: 15vh;
+  display: grid;
+  place-items: center;
+}
+
+.main {
+  height: 80vh;
+  display: grid;
+  place-content: center;
+  overflow-y: scroll;
+}
+
+.cards-container {
+  display: grid;
+  min-height: 90%;
+  min-width: 90vw;
+  border: 1px solid red;
+  overflow-y: scroll;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  width: 20rem;
+  aspect-ratio: 1/1;
+  border: 1px solid red;
+  place-items: center;
+  border-radius: 15px;
+}
+
+.footer {
+  height: 5vh;
+  display: grid;
+  place-items: center;
+}
+
+/* mobile */
+
+@media screen and (min-width: 320px) {
+  .header,
+  .main,
+  .footer {
+    border: 1px solid green;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .card {
+    aspect-ratio: 1/1.5;
+  }
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) {
+  .header,
+  .main,
+  .footer {
+    border: 1px solid blue;
+  }
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    width: 10rem;
+    aspect-ratio: 1/1.25;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 1024px) {
+  .header,
+  .main,
+  .footer {
+    border: 1px solid yellow;
+    width: 70vw;
+  }
+  .cards-container {
+    border: 1px solid magenta;
+    display: grid;
+    /* min 1 column max 5 columns */
+    min-width: 70vw;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-content: stretch;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .card {
+    width: 20rem;
+    aspect-ratio: 1.25/1;
+  }
+}
